@@ -7,8 +7,6 @@ Não use a função strlen().
 
 */
 
-void exibirVetor(int vetor[10], int tamanhoVetor);
-
 int main(void)
 {
     int contador = 0, i = 0;
@@ -17,17 +15,8 @@ int main(void)
 
     while (minhaString[i])
     {
-        printf('%c', minhaString[i]);
         i++;
     };
 
-    printf("%d\n", i);
-}
-
-void exibirVetor(int vetor[10], int tamanhoVetor)
-{
-    for (int i = 0; i < tamanhoVetor; i++)
-    {
-        printf("%d\n", vetor[i]);
-    };
+    printf("A string tem %d caracteres\n", i);
 }
