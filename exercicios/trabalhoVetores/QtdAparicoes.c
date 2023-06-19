@@ -12,29 +12,25 @@ void coletarNumeros(int numeros[], int qtdNumeros)
     }
 }
 
-int checarExistencia(int numeroAlvo, int numeros[], int qtdNumeros)
+int contarAparicoes(int numeroAlvo, int numeros[], int qtdNumeros)
 {
+    int contador = 0;
 
     for (int i = 0; i < qtdNumeros; i++)
     {
         if (numeros[i] == numeroAlvo)
-            return 1;
+            contador++;
     }
 
-    return 0;
+    return contador;
 }
 
-void removerDuplicados(int numeros[], int numerosSemDuplicaodos[], int qtdNumeros)
+void gerarQtdAparicoes(int numeros[], int qtdAparicoes[], int qtdNumeros)
 {
-    int j = 0;
 
     for (int i = 0; i < qtdNumeros; i++)
     {
-        if (!checarExistencia(numeros[i], numerosSemDuplicaodos, qtdNumeros))
-        {
-            numerosSemDuplicaodos[j] = numeros[i];
-            j++;
-        }
+        qtdAparicoes[i] = contarAparicoes(numeros[i], numeros, qtdNumeros);
     }
 }
 
@@ -54,13 +50,13 @@ int main(void)
 {
 
     int numeros[QtdNumeros];
-    int numerosSemDuplicados[QtdNumeros] = {0};
+    int qtdAparicoes[QtdNumeros] = {0};
 
     coletarNumeros(numeros, QtdNumeros);
 
-    removerDuplicados(numeros, numerosSemDuplicados, QtdNumeros);
+    gerarQtdAparicoes(numeros, qtdAparicoes, QtdNumeros);
 
-    exibirNumeros(numerosSemDuplicados, QtdNumeros);
+    exibirNumeros(qtdAparicoes, QtdNumeros);
 
     return 0;
 }
