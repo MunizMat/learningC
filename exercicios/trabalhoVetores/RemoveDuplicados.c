@@ -2,13 +2,11 @@
 
 void coletarNumeros(int numeros[], int qtdNumeros)
 {
-    int num = 0;
 
     for (int i = 0; i < qtdNumeros; i++)
     {
         printf("Digite o elemento %d:\n", i);
-        scanf("%d", &num);
-        numeros[i] = num;
+        scanf("%d", &numeros[i]);
     }
 }
 
